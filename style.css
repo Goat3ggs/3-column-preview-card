@@ -34,7 +34,8 @@
 */
 html,
 body {
-  height: 100%;
+  /* originally it was "height: 100%" but this cauased the element to be cut of at the top on smaller devices.. see the @media from below for more information*/
+  min-height: 100vh;
 }
 /*
   Typographic tweaks!
@@ -107,6 +108,7 @@ body {
 }
 
 @media (min-width: 600px) {
+  /* i can keep the html,body: 100%; but I have to integrate here the display and the placement of the body here in the @media and delete them from the body tag from above so it will place the element on center only on desktop and keep it simple(default) on smaller sizes.*/
   .card-container {
     grid-template-columns: 1fr 1fr 1fr;
     
